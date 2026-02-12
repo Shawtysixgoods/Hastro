@@ -1,43 +1,42 @@
-# Astro Starter Kit: Minimal
+Использование Astro и Hono совместно.
 
-```sh
-bun create astro@latest -- --template minimal
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
+Hastro/
 ├── src/
-│   └── pages/
-│       └── index.astro
+│   ├── modules/                    # Modules, programm components (Self-contained Features)
+│   │   └── demo/                   # Example
+│   │       ├── api/                # Backend API (Hono)
+│   │       ├── core/               # Business Logic
+│   │       └── pages/              # UI template demo (Auto-injected)
+│   │           └── index.astro     # -> /demo
+│   │           
+│   ├── pages/                      # Global pages (Standalone)
+│   │   ├── index.astro             # Main (/)
+│   │   ├── about.astro             # About (/about)
+│   │   └── 404.astro               # Error
+│   │
+│   ├── ui/                         # UI SYSTEM (Design System)
+│   │   ├── components/             # Atoms (Button, Card, Input)
+│   │   ├── layouts/                # Global layout (Base, App)
+│   │   ├── styles/                 # Global CSS/Tailwind
+│   │   └── icons/                  # SVG Icons
+│   │
+│   ├── app/                        # CORE (Server & Routing)
+│   │   ├── server.ts               # Bun Entrypoint
+│   │   ├── router.ts               # Global API Router
+│   │   └── middlewares/            # App-level middlewares
+│   │
+│   ├── shared/                     # SHARED KERNEL (Non-UI Utilities)
+│   │   ├── db.ts                   # Prisma Client
+│   │   ├── config.ts               # Env vars
+│   │   └── utils.ts                # Helpers
+│   │
+│   └── integrations/               # ASTRO PLUGINS
+│       └── module-loader.ts        # Auto-loader
+│
+├── prisma/
+├── astro.config.mjs
 └── package.json
+
 ```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `bun install`             | Installs dependencies                            |
-| `bun dev`             | Starts local dev server at `localhost:4321`      |
-| `bun build`           | Build your production site to `./dist/`          |
-| `bun preview`         | Preview your build locally, before deploying     |
-| `bun astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `bun astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
