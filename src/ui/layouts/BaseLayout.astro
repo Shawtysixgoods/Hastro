@@ -1,0 +1,17 @@
+---
+const { title = "Hastro" } = Astro.props;
+---
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{title}</title>
+</head>
+<body>
+    <nav style="padding: 1rem; background: #eee;">
+        <a href="/">Home</a> | <a href="/demo">Demo Module</a>
+    </nav>
+    <main style="padding: 2rem;">
+        <slot />
+    </main>
+</body>
+</html>
