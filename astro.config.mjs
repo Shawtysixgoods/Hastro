@@ -1,8 +1,8 @@
 import { defineConfig } from "astro/config";
-import honoAstro from "hono-astro-adapter"; // 🔥 FIXED ADAPTER
+import honoAstro from "hono-astro-adapter"; 
 import { moduleLoader } from "./src/integrations/module-loader";
 
 export default defineConfig({
-  adapter: honoAstro(), // Работает идеально с Hono
+  adapter: honoAstro(), 
   integrations: [moduleLoader()]
 });

@@ -1,9 +1,9 @@
 import type { AstroIntegration } from "astro";
-import * as fs from "node:fs/promises"; // 🔥 FIXED IMPORT
+import * as fs from "node:fs/promises"; 
 
 export function moduleLoader(): AstroIntegration {
   return {
-    name: "taurus-module-loader",
+    name: "Hastro-module-loader",
     hooks: {
       "astro:config:setup": async ({ injectRoute, config }) => {
         const modulesPath = new URL("./src/modules", config.root);
